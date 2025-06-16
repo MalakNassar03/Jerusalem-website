@@ -1,0 +1,28 @@
+.breadCrumb_ul {
+    display: flex;
+
+}
+.breadCrumb_ul li:after {
+    content: ">";
+    padding-left: 5px;
+}
+.breadCrumb_ul li a{
+    color: white;
+
+}
+.breadcrumb_banner {
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.9) 0%,
+            rgba(0,0,0,0.7) 40%,
+            rgba(0,0,0,0) 100%
+        ),
+        url("../images/just_for_testing.png") center/cover no-repeat;
+    color: white;
+}
+.bannerInfo{
+    padding: 61px 0;
+
+}
+

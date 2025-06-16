@@ -1,0 +1,67 @@
+url = "/api/:category"
+layout = "default"
+title = "category"
+==
+<?php
+use RainLab\Blog\Models\Post;
+use RainLab\Blog\Models\Category;
+
+function onStart()
+{
+    $slug = $this->param('category');
+    $category = Category::where('slug', $slug)->first();
+
+    $posts = Post::with([
+            'categories',
+            'featured_images',
+            'tags',
+            'post_type'   // The belongsTo you wired up in Plugin::boot()
+        ])
+        ->whereHas('categories', fn($q) => $q->where('slug', $slug))
+        ->orderBy('published_at','desc')
+        ->get()
+        ->map(function($post) {
+            // pull the first image URL
+            $img = $post->featured_images->first();
+            
+            // if the plugin’s helper exists, grab your saved repeater values
+            $typeValues = [];
+            if (method_exists($post, 'typeAttributes')) {
+                $typeValues = $post->typeAttributes();
+            }
+            
+            return [
+                'id'          => $post->id,
+                'title'       => $post->title,
+                'slug'        => $post->slug,
+                'excerpt'     => $post->excerpt,
+                'content'     => strip_tags($post->content_html),
+                'date'        => optional($post->published_at)->format('j F, Y'),
+                'image'       => $img ? url($img->getPath()) : null,
+
+                'tags'        => $post->tags->map(fn($t) => [
+                                   'id'   => $t->id,
+                                   'name' => $t->name,
+                                   'slug' => $t->slug,
+                                 ])->all(),
+
+                // the Type definition (name, slug, description, schema)
+                'type'        => optional($post->post_type)->toArray(),
+
+                // **your actual per‐post values** for date/start/end/location
+                'type_values' => $typeValues,
+            ];
+        });
+
+    return response()->json([
+        'category' => $category ? [
+            'id'          => $category->id,
+            'slug'        => $category->slug,
+            'name'        => $category->name,
+            'description' => $category->description,
+        ] : null,
+        'posts' => $posts,
+    ]);
+}
+?>
+==

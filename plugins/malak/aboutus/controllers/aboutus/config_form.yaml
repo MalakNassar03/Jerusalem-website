@@ -1,0 +1,10 @@
+name: AboutUs
+form: $/malak/aboutus/models/aboutus/fields.yaml
+modelClass: Malak\AboutUs\Models\AboutUs
+defaultRedirect: malak/aboutus/aboutus
+create:
+    redirect: 'malak/aboutus/aboutus/update/:id'
+    redirectClose: malak/aboutus/aboutus
+update:
+    redirect: malak/aboutus/aboutus
+    redirectClose: malak/aboutus/aboutus

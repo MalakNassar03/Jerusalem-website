@@ -1,0 +1,11 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table malak_aboutus_data'
+    - builder_table_create_malak_aboutus_data.php
+v1.0.3:
+    - 'Updated table malak_aboutus_data'
+    - builder_table_update_malak_aboutus_data.php
+v1.0.4:
+    - 'Updated table malak_aboutus_data'
+    - builder_table_update_malak_aboutus_data_2.php

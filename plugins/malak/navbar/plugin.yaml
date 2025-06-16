@@ -1,0 +1,6 @@
+plugin:
+    name: 'malak.navbar::lang.plugin.name'
+    description: 'malak.navbar::lang.plugin.description'
+    author: Malak
+    icon: oc-icon-navicon
+    homepage: ''

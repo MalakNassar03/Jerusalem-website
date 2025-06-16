@@ -1,0 +1,164 @@
+.contact-us-navbar{
+    background: var(--yellow);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 0;
+
+}
+.nav-bar{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 19px 0;
+
+
+}
+
+.nav{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.nav .nav-link{
+    color: black;
+    padding: 0;
+
+}
+.nav li:not(:last-child) {
+    margin-right: 35px;
+}
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav-icons{
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav-icons ul{
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.nav-icons a{
+    color: black;
+}
+
+
+
+
+
+
+
+.hover_circle {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+.hover_circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0.75px solid black;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    z-index: 0;
+
+}
+
+.nav-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 21px;
+      list-style: none;
+
+  }
+
+.hover_circle :last-child {
+    margin-left: 0;
+}
+.hover_circle :first-child{
+    margin-left: 0;
+}
+.search i{
+    color:white;
+
+}
+.hover_circle.search::before  {
+    background-color: black;
+    border: black;
+}
+
+.hover_circle.phone::before  {
+    background-color: black;
+    border: black;
+}
+.hover_circle.phone {
+    width: 35px;
+    height: 35px;
+    margin-right:12px ;
+}
+.phone i{
+    color: var(--yellow);
+}
+.hover_circle i {
+    position: relative;
+    z-index: 1;
+
+}
+
+
+.icon  i, .search i , .phone i {
+    font-size: 20px;
+
+}
+.hover_circle:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+.hover_circle:hover i {
+    color: var(--yellow);
+}
+.search:hover i  {
+    color: white;
+}
+
+.nav-icons  ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-us-navbar .nav-icons li:first-child {
+    margin-right: auto;
+}
+
+
+
+

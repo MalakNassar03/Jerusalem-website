@@ -1,0 +1,10 @@
+name: Slider
+form: $/malak/repeater/models/slider/fields.yaml
+modelClass: Malak\Repeater\Models\Slider
+defaultRedirect: malak/repeater/slider
+create:
+    redirect: 'malak/repeater/slider/update/:id'
+    redirectClose: malak/repeater/slider
+update:
+    redirect: malak/repeater/slider
+    redirectClose: malak/repeater/slider

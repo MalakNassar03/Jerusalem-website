@@ -1,0 +1,89 @@
+items:
+    -
+        title: 'Who we are'
+        nesting: null
+        type: url
+        url: /who-we-are
+        code: who-we-are
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'What we do'
+        nesting: null
+        type: url
+        url: /what-we-do
+        code: what-we-do
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Grants
+        nesting: null
+        type: url
+        url: /grants
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Blogs
+        nesting: null
+        type: url
+        url: /blogs
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Resource Library'
+        nesting: null
+        type: url
+        url: /resource-library
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        nesting: null
+        type: url
+        url: /contact-us
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Events
+        type: url
+        url: /events
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: nav-bar

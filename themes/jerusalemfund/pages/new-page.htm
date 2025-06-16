@@ -1,0 +1,21 @@
+title = "social-links"
+layout = "default"
+url = "/api/social-links"
+==
+<?php
+use GinoPane\AwesomeSocialLinks\Models\Settings;
+
+function onStart()
+{
+    $rawLinks = Settings::instance()->get('links', []);
+
+    $links = collect($rawLinks)->map(fn($l) => [
+        'icon'  => $l['icon']   ?? null,
+        'title' => $l['name']  ?? null,
+        'url'   => $l['link']    ?? null,
+    ])->toArray();
+
+    return response()->json($links);
+}
+?>
+==

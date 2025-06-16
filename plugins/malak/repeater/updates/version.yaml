@@ -1,0 +1,14 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table malak_repeater_slider'
+    - builder_table_create_malak_repeater_slider.php
+v1.0.3:
+    - 'Updated table malak_repeater_slider'
+    - builder_table_update_malak_repeater_slider.php
+v1.0.4:
+    - 'Updated table malak_repeater_repeater'
+    - builder_table_update_malak_repeater_repeater.php
+v1.0.5:
+    - 'Updated table malak_repeater_repeater'
+    - builder_table_update_malak_repeater_slider_2.php

@@ -1,0 +1,11 @@
+plugin:
+    name: 'malak.repeater::lang.plugin.name'
+    description: 'malak.repeater::lang.plugin.description'
+    author: Malak
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    repeater:
+        label: repeater
+        url: malak/repeater/slider
+        icon: icon-life-ring

@@ -1,0 +1,48 @@
+title = "menu"
+layout = "default"
+url = "/api/menu"
+==
+<?php
+function onStart()
+{
+    $slug     = input('slug');
+    $themeDir = \Cms\Classes\Theme::getActiveTheme()->getDirName();
+
+    if (!$slug) {
+        return response()->json(['error' => 'Missing slug'], 400);
+    }
+
+    $path = base_path("themes/{$themeDir}/meta/menus/{$slug}.yaml");
+    if (!\File::exists($path)) {
+        return response()->json(['error' => "Menu file not found: {$slug}.yaml"], 404);
+    }
+
+    // Instantiate the YAML parser and load the file
+    $yamlParser = new \October\Rain\Parse\Yaml();
+    $menuDef    = $yamlParser->parseFile($path);
+
+    if (empty($menuDef['items']) || !is_array($menuDef['items'])) {
+        return response()->json(['error' => 'Invalid menu definition'], 500);
+    }
+
+    $items = [];
+    foreach ($menuDef['items'] as $item) {
+        $items[] = [
+            'title'      => $item['title']      ?? '',
+            'url'        => $item['url']        ?? '',
+            'code'       => $item['code']       ?? '',
+            'isHidden'   => (bool)($item['viewBag']['isHidden'] ?? 0),
+            'cssClass'   => $item['viewBag']['cssClass']  ?? '',
+            'isExternal' => (bool)($item['viewBag']['isExternal'] ?? 0),
+        ];
+    }
+
+    // return response()->json($items);
+    return response()->json([
+        'code'  => $slug,
+        'name'  => $menuDef['name'] ?? $slug,
+        'items' => $items,
+    ]);
+}
+?>
+==

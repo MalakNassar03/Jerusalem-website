@@ -1,0 +1,33 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    link:
+        label: Link
+        span: auto
+        type: pagefinder
+    paragraph1:
+        label: Paragraph1
+        size: large
+        span: full
+        type: richeditor
+    Image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    date:
+        label: date
+        mode: datetime
+        span: auto
+        type: datepicker
+    paragraph2:
+        label: Paragraph2
+        size: large
+        span: full
+        type: richeditor

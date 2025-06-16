@@ -1,0 +1,11 @@
+plugin:
+    name: 'malak.aboutus::lang.plugin.name'
+    description: 'malak.aboutus::lang.plugin.description'
+    author: Malak
+    icon: oc-icon-bank
+    homepage: ''
+navigation:
+    AboutUs:
+        label: AboutUs
+        url: malak/aboutus/aboutus
+        icon: icon-bank

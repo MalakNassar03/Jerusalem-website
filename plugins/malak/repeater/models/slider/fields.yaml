@@ -1,0 +1,62 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor
+    repeater:
+        label: Repeater
+        prompt: 'Add new item'
+        displayMode: accordion
+        span: auto
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    span: auto
+                    type: text
+                subtitle:
+                    label: SubTitle
+                    span: auto
+                    type: text
+                description:
+                    label: Description
+                    size: large
+                    span: full
+                    type: richeditor
+                image:
+                    label: 'Sider Image'
+                    mode: file
+                    thumbOptions:
+                        mode: crop
+                        extension: auto
+                    span: auto
+                    type: mediafinder
+                page_finder_url:
+                    label: 'Page Finder'
+                    span: auto
+                    type: pagefinder
+                page_url_text:
+                    label: 'Page Url Text'
+                    span: auto
+                    type: text
+                background:
+                    label: Background
+                    mode: file
+                    thumbOptions:
+                        mode: crop
+                        extension: auto
+                    span: auto
+                    type: mediafinder
