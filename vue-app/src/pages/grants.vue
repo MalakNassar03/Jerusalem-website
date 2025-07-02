@@ -1,9 +1,11 @@
 <script setup>
 
+import BreadCrumb from "@/components/breadcrumb_banner.vue";
 </script>
 
 <template>
-<h1>kjdhkjshdkjhdkjh</h1>
+    <bread-crumb></bread-crumb>
+
 </template>
 
 <style scoped>

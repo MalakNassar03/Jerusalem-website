@@ -1,0 +1,69 @@
+fields:
+    slug:
+        label: URL Slug
+        type: text
+
+    title:
+        label: Page Title
+        type: text
+
+    feature_blocks:
+        label: Feature Blocks
+        type: repeater
+        prompt: Add a feature block
+        displayMode: accordion
+        form:
+            fields:
+                icon:
+                    label: Icon
+                    type: mediafinder
+                headline:
+                    label: Headline
+                    type: text
+                text:
+                    label: Text
+                    type: textarea
+                button_text:
+                    label: Button Text
+                    type: text
+                button_url:
+                    label: Button URL
+                    type: pagefinder
+
+    history:
+        label: History Section
+        type: repeater
+        prompt: Add history block
+        form:
+            fields:
+                background:
+                    label: Background
+                    type: mediafinder
+                content:
+                    label: Content
+                    type: richeditor
+                link_text:
+                    label: Link Text
+                    type: text
+                link_url:
+                    label: Link URL
+                    type: pagefinder
+
+    staff:
+        label: Our Team
+        type: repeater
+        prompt: Add a team member
+        form:
+            fields:
+                photo:
+                    label: Photo
+                    type: mediafinder
+                name:
+                    label: Name
+                    type: text
+                role:
+                    label: Role
+                    type: text
+                bio:
+                    label: Bio
+                    type: textarea

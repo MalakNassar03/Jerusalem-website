@@ -1,0 +1,10 @@
+list:
+    columns:
+        id:
+            label: ID
+        title:
+            label: Title
+            type: text
+        slug:
+            label: Slug
+            type: text

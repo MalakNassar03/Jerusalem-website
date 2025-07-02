@@ -3,8 +3,12 @@ export default {
     name: "AboutUs",
     props: {
         about: {
-            type: Array,
-            default: () => []
+            type: Object,
+            default: () => ({})
+        },
+        showButtons: {
+            type: Boolean,
+            default: true
         }
 
     }
@@ -26,8 +30,10 @@ export default {
                 </a>
                 <p  v-html="about.paragraph1"></p>
                 <p>{{ about.paragraph2 }} <button class="read-more-btn">..read more</button></p>
-                <button class="donate-btn">Donate now!</button>
-
+                <button
+                    v-if="showButtons"
+                    class="donate-btn"
+                >Donate now!</button>
             </div>
 
         </div>

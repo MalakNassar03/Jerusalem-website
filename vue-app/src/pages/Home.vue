@@ -204,6 +204,7 @@ export default {
     <event-box
         :events="events"
         :category="eventsCategory"
+        :limit="3"
     />
 
 

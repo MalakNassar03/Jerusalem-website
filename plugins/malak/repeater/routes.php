@@ -25,7 +25,7 @@ Route::get('slider/{slug}', function ($slug) {
 
     return response()->json([
         'id'          => $slide->id,
-        'slug'        => $slide->slug,         // now included
+        'slug'        => $slide->slug,
         'title'       => $slide->title,
         'description' => $slide->description,
         'repeater'    => $items,

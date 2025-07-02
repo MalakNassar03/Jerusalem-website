@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /*height: 100dvh;*/
+
     aspect-ratio: 1920 / 1010;
     display: flex;
     flex-direction: column;

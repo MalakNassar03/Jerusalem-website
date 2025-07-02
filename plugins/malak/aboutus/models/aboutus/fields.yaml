@@ -31,3 +31,11 @@ fields:
         size: large
         span: full
         type: richeditor
+    button_boolean:
+        label: 'show button'
+        span: auto
+        type: checkbox
+    date_boolean:
+        label: 'show date'
+        span: auto
+        type: checkbox

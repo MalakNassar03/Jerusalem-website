@@ -1,6 +1,6 @@
-title = "menu"
-layout = "default"
 url = "/api/menu"
+layout = "default"
+title = "menu"
 ==
 <?php
 function onStart()
@@ -17,7 +17,7 @@ function onStart()
         return response()->json(['error' => "Menu file not found: {$slug}.yaml"], 404);
     }
 
-    // Instantiate the YAML parser and load the file
+    // Load the YAML definition
     $yamlParser = new \October\Rain\Parse\Yaml();
     $menuDef    = $yamlParser->parseFile($path);
 
@@ -25,19 +25,32 @@ function onStart()
         return response()->json(['error' => 'Invalid menu definition'], 500);
     }
 
-    $items = [];
-    foreach ($menuDef['items'] as $item) {
-        $items[] = [
-            'title'      => $item['title']      ?? '',
-            'url'        => $item['url']        ?? '',
-            'code'       => $item['code']       ?? '',
-            'isHidden'   => (bool)($item['viewBag']['isHidden'] ?? 0),
-            'cssClass'   => $item['viewBag']['cssClass']  ?? '',
-            'isExternal' => (bool)($item['viewBag']['isExternal'] ?? 0),
-        ];
-    }
+    // Recursive helper to parse items + any nested children
+    $parseItems = function(array $rawItems) use (&$parseItems) {
+        $out = [];
+        foreach ($rawItems as $item) {
+            $node = [
+                'title'      => $item['title']      ?? '',
+                'url'        => $item['url']        ?? '',
+                'code'       => $item['code']       ?? '',
+                'isHidden'   => (bool)($item['viewBag']['isHidden'] ?? 0),
+                'cssClass'   =>  $item['viewBag']['cssClass']  ?? '',
+                'isExternal' => (bool)($item['viewBag']['isExternal'] ?? 0),
+            ];
 
-    // return response()->json($items);
+            // If this item has children, parse them recursively
+            if (!empty($item['items']) && is_array($item['items'])) {
+                $node['items'] = $parseItems($item['items']);
+            }
+
+            $out[] = $node;
+        }
+        return $out;
+    };
+
+    // Build the top-level items (with any nested sub-menus)
+    $items = $parseItems($menuDef['items']);
+
     return response()->json([
         'code'  => $slug,
         'name'  => $menuDef['name'] ?? $slug,

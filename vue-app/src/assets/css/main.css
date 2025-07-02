@@ -10,6 +10,10 @@
 @import "impact.css";
 @import "gallery.css";
 @import "breadCrumb.css";
+@import "Who_we_are.css";
+@import "History.css";
+@import "board_of_directors.css";
+
 
 
 
@@ -92,9 +96,6 @@ body img{
     --font-card-descriptions:16px;
     --description:18px;
     --date15:15px;
-
-
-
 }
 
 .read-more-btn,

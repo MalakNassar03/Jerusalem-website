@@ -1,0 +1,59 @@
+.history_box{
+    display: flex;
+}
+.history_paragraphs span{
+    font-weight: 700;
+}
+.history_paragraphs{
+    width:75% ;
+
+}
+.founder{
+    position: relative;
+    display: inline-block;
+    margin-right: 46px;
+    overflow: hidden;
+
+}
+.founder_img{
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: inset 0 -66px 45px 35px rgba(0,0,0,0.72);
+z-index: 100;
+
+
+}
+.founder_img img{
+    box-shadow: 0px -66px 45px 35px #000000B8 inset;
+    z-index: 100;
+
+}
+
+
+.founder_info{
+    position: absolute;
+    content: ' ';
+    bottom: 28px;
+    left: 37px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 100;
+}
+.founder_info .name{
+    color: var(--yellow);
+    font-size: var(--font-header) ;
+    font-weight: 700;
+}
+.founder_info{
+    color: white;
+}
+.history_box{
+    margin-bottom: var(--margin-bottom-sections);
+}
+
+.history_paragraphs > *:not(:last-child) {
+    margin-bottom: 35px;
+}
+

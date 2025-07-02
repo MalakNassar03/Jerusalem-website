@@ -9,8 +9,22 @@ export default {
         category: {
             type: Object,
             default: () => ({})
+        },
+        limit: {
+            type: Number,
+            default: null
+        },
+    },
+
+    computed: {
+        // compute the list we actually render
+        displayEvents() {
+            return this.limit != null
+                ? this.events.slice(0, this.limit)
+                : this.events
         }
-    }
+}
+
 };
 </script>
 
@@ -37,7 +51,7 @@ export default {
 <!--        </div>-->
         <div class="events_cards">
             <div
-                v-for="(event, idx) in events"
+                v-for="(event, idx) in displayEvents"
                 :key="idx"
                 class="events_card"
             >
